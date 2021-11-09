@@ -91,7 +91,7 @@ task staticAnalysis(type: GradleBuild) {
         'clean',
         'checkstyleMain',
         'checkstyleTest',
-        'checkstyleDefaultTest',
+
         'pmdMain',
         'pmdTest',
         'pmdDefaultTest',
