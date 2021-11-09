@@ -46,28 +46,28 @@ public class MapParserTest {
         Mockito.verify(levelFactory, Mockito.times(0)).createPellet();
     }
 
-/**
- * Test for the parseMap method (bad map).
- */
+    /**
+     * Test for the parseMap method (bad map).
+     */
 
-@Test
-public void testParseMapWrong1() {
-    PacmanConfigurationException thrown =
-        Assertions.assertThrows(PacmanConfigurationException.class, () -> {
-            MockitoAnnotations.initMocks(this);
-            assertNotNull(boardFactory);
-            assertNotNull(levelFactory);
-            MapParser mapParser = new MapParser(levelFactory, boardFactory);
-            //ArrayList<String> map = new ArrayList<>();
-            ArrayList<String> map = new ArrayList<>();
-            map.add("############");
-            map.add("#i        G#");
-            map.add("############");
-            mapParser.parseMap(map);
-        });
-    //merge
-    Assertions.assertEquals( "Invalid character at 1,1: i", thrown.getMessage());
+    @Test
+    public void testParseMapWrong1() {
+        PacmanConfigurationException thrown =
+            Assertions.assertThrows(PacmanConfigurationException.class, () -> {
+                MockitoAnnotations.initMocks(this);
+                assertNotNull(boardFactory);
+                assertNotNull(levelFactory);
+                MapParser mapParser = new MapParser(levelFactory, boardFactory);
+                //ArrayList<String> map = new ArrayList<>();
+                ArrayList<String> map = new ArrayList<>();
+                map.add("############");
+                map.add("#i        G#");
+                map.add("############");
+                mapParser.parseMap(map);
+            });
+        //merge
+        Assertions.assertEquals("Invalid character at 1,1: i", thrown.getMessage());
+    }
+
+
 }
-
-
- }
