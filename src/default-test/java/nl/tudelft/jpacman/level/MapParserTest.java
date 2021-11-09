@@ -49,6 +49,7 @@ public class MapParserTest {
 /**
  * Test for the parseMap method (bad map).
  */
+
 @Test
 public void testParseMapWrong1() {
     PacmanConfigurationException thrown =
@@ -57,15 +58,15 @@ public void testParseMapWrong1() {
             assertNotNull(boardFactory);
             assertNotNull(levelFactory);
             MapParser mapParser = new MapParser(levelFactory, boardFactory);
+            //ArrayList<String> map = new ArrayList<>();
             ArrayList<String> map = new ArrayList<>();
-                /*
-                Create a map with inconsistent size between
-                each row or contain invalid characters
-                */
+            map.add("############");
+            map.add("#i        G#");
+            map.add("############");
             mapParser.parseMap(map);
         });
     //merge
-    Assertions.assertEquals( "Input text must consist of at least 1 row.", thrown.getMessage());
+    Assertions.assertEquals( "Invalid character at 1,1: i", thrown.getMessage());
 }
 
 
