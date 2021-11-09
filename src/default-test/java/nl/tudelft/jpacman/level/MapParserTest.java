@@ -64,6 +64,7 @@ public void testParseMapWrong1() {
                 */
             mapParser.parseMap(map);
         });
+    //merge
     Assertions.assertEquals( "Input text must consist of at least 1 row.", thrown.getMessage());
 }
 
